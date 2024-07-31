@@ -1,14 +1,13 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { RecoilRoot } from 'recoil'
+import { RatingProvider } from '../context/RatingContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return (
-      <RecoilRoot>
-          <Component {...pageProps} />
-        </AuthProvider>
-      </RecoilRoot>
-    )
-  }
+  return (
+    <RatingProvider>
+      <Component {...pageProps} />
+    </RatingProvider>
+  );
+}
   
   export default MyApp

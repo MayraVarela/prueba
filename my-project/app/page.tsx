@@ -1,5 +1,4 @@
 "use client";
-
 import Head from 'next/head'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
@@ -8,6 +7,7 @@ import { Movie } from '../typing'
 import { useEffect, useState } from 'react'
 import Row from '../components/Row'
 import Modal from '../components/Modal'
+import MovieDetailsModal from '../components/MovieDetailsModal'
 
 interface Props {
   netflixOriginals: Movie[]
@@ -23,6 +23,7 @@ interface Props {
 const Home = () => {
     const [data, setData] = useState<Props | null>(null)
     const [modalOpen, setModalOpen] = useState(false)
+    const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null)
     const [searchQuery, setSearchQuery] = useState('')
 
     useEffect(() => {
@@ -67,6 +68,14 @@ const Home = () => {
         setModalOpen(true)
     }
 
+    const handleMovieClick = (movie: Movie) => {
+        setSelectedMovie(movie)
+    }
+
+    const handleCloseModal = () => {
+        setSelectedMovie(null)
+    }
+
     if (!data) {
         return <div>Loading...</div>
     }
@@ -84,13 +93,41 @@ const Home = () => {
                 <Banner netflixOriginals={data.netflixOriginals} />
 
                 <section className="md:space-y-24">
-                    <Row title="Trending Now" movies={data.trendingNow} />
-                    <Row title="Top Rated" movies={data.topRated} />
-                    <Row title="Action Thrillers" movies={data.actionMovies} />
-                    <Row title="Comedies" movies={data.comedyMovies} />
-                    <Row title="Scary Movies" movies={data.horrorMovies} />
-                    <Row title="Romance Movies" movies={data.romanceMovies} />
-                    <Row title="Documentaries" movies={data.documentaries} />
+                    <Row
+                      title="Trending Now"
+                      movies={data.trendingNow}
+                      onMovieClick={handleMovieClick} // Pasar el manejador de clics
+                    />
+                    <Row
+                      title="Top Rated"
+                      movies={data.topRated}
+                      onMovieClick={handleMovieClick}
+                    />
+                    <Row
+                      title="Action Thrillers"
+                      movies={data.actionMovies}
+                      onMovieClick={handleMovieClick}
+                    />
+                    <Row
+                      title="Comedies"
+                      movies={data.comedyMovies}
+                      onMovieClick={handleMovieClick}
+                    />
+                    <Row
+                      title="Scary Movies"
+                      movies={data.horrorMovies}
+                      onMovieClick={handleMovieClick}
+                    />
+                    <Row
+                      title="Romance Movies"
+                      movies={data.romanceMovies}
+                      onMovieClick={handleMovieClick}
+                    />
+                    <Row
+                      title="Documentaries"
+                      movies={data.documentaries}
+                      onMovieClick={handleMovieClick}
+                    />
                 </section>
             </main>
 
@@ -99,9 +136,15 @@ const Home = () => {
                 onClose={() => setModalOpen(false)}
                 searchQuery={searchQuery}
             />
+
+            {selectedMovie && (
+                <MovieDetailsModal
+                  movie={selectedMovie}
+                  onClose={handleCloseModal}
+                />
+            )}
         </div>
     )
 }
 
 export default Home
-
