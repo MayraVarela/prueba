@@ -1,4 +1,5 @@
 "use client";
+
 import Head from 'next/head'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
@@ -25,6 +26,7 @@ const Home = () => {
     const [modalOpen, setModalOpen] = useState(false)
     const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null)
     const [searchQuery, setSearchQuery] = useState('')
+    const [isFavorite, setIsFavorite] = useState<boolean>(false) 
 
     useEffect(() => {
         const fetchData = async () => {
@@ -74,6 +76,11 @@ const Home = () => {
 
     const handleCloseModal = () => {
         setSelectedMovie(null)
+        setModalOpen(false)
+    }
+
+    const toggleFavorite = () => {
+        setIsFavorite(!isFavorite)
     }
 
     if (!data) {
@@ -133,7 +140,7 @@ const Home = () => {
 
             <Modal
                 isOpen={modalOpen}
-                onClose={() => setModalOpen(false)}
+                onClose={handleCloseModal}
                 searchQuery={searchQuery}
             />
 
@@ -141,6 +148,8 @@ const Home = () => {
                 <MovieDetailsModal 
                   movie={selectedMovie}
                   onClose={handleCloseModal}
+                  isFavorite={isFavorite}
+                  toggleFavorite={toggleFavorite}
                 />
             )}
         </div>
@@ -148,3 +157,4 @@ const Home = () => {
 }
 
 export default Home
+
