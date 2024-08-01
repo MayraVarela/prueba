@@ -96,7 +96,7 @@ const Home = () => {
                     <Row
                       title="Trending Now"
                       movies={data.trendingNow}
-                      onMovieClick={handleMovieClick} // Pasar el manejador de clics
+                      onMovieClick={handleMovieClick} 
                     />
                     <Row
                       title="Top Rated"
@@ -138,7 +138,7 @@ const Home = () => {
             />
 
             {selectedMovie && (
-                <MovieDetailsModal
+                <MovieDetailsModal 
                   movie={selectedMovie}
                   onClose={handleCloseModal}
                 />

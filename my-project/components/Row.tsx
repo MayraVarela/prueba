@@ -6,7 +6,7 @@ import Thumbnail from './Thumbnail'
 interface Props {
     title: string
     movies: Movie[]
-    onMovieClick: (movie: Movie) => void  // Añadir esta prop
+    onMovieClick: (movie: Movie) => void  
 }
 
 function Row({ title, movies, onMovieClick }: Props) {

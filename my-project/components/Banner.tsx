@@ -3,7 +3,7 @@ import { Movie } from '../typing'
 import { useEffect, useState } from 'react'
 import { FaPlay } from  'react-icons/fa'
 import { InformationCircleIcon } from '@heroicons/react/solid'
-import { useRecoilState } from 'recoil'
+
 
 
 
