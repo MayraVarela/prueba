@@ -10,6 +10,8 @@ next: Next.js se usó para aprovechar la renderización en el lado del servidor 
 
 Tailwind CSS fue seleccionado para este proyecto debido a su enfoque flexible y eficiente para la creación de interfaces de usuario. Su capacidad para personalizar y ajustar el diseño rápidamente, junto con su enfoque en clases utilitarias, permite un desarrollo ágil y un diseño limpio y consistente. La integración con herramientas de desarrollo y su comunidad activa aportan un valor adicional al proceso de desarrollo.
 
+React Testing Library / Jest: El testing de rutas es crucial para asegurar que los usuarios puedan navegar de manera eficaz y que las distintas secciones de la aplicación funcionen de acuerdo con las expectativas. Herramientas como Jest y React Testing Library proporcionan las capacidades necesarias para implementar estas pruebas de manera eficiente y confiable, ayudando a mantener la calidad y estabilidad del código a lo largo del tiempo.
+
 @heroicons/react: Se eligió por su colección de íconos SVG de alta calidad y su integración sencilla con React, mejorando la experiencia visual de la aplicación.
 
 react y react-dom: Fundamentales para la construcción de la interfaz de usuario y su renderización en el navegador, proporcionando un enfoque basado en componentes para el desarrollo.
@@ -52,3 +54,9 @@ La lógica de programación del repositorio se basa en una combinación de Redux
 
 ¡Gracias por revisar el proyecto!
 
+
+![hero](https://github.com/user-attachments/assets/c3ed0f86-bfb6-4b3f-8864-f8ef7550de68)
+![Captura de pantalla 2024-08-01 194309](https://github.com/user-attachments/assets/831660c9-11f3-43e9-8ddb-541ae961c16c)
+![banner](https://github.com/user-attachments/assets/73f04b59-70f0-4b09-829f-7f37caf24bd9)
+![Captura de pantalla 2024-08-01 194642](https://github.com/user-attachments/assets/636e344a-3b9c-4a08-a21e-b8988305e91a)
+![Captura de pantalla 2024-08-01 195117](https://github.com/user-attachments/assets/76aa0b9b-793a-4d90-af80-4b27e3ad4d32)
